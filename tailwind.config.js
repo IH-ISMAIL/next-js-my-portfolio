@@ -1,3 +1,4 @@
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -21,11 +22,17 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: "#1c1c22",
+        primary: {
+          DEFAULT: "#1c1c22",
+        },
         accent: {
           DEFAULT: "#00ff99",
           hover: "#00e187"
-        }
+        },
+        secondary: {
+              DEFAULT: "red",
+              foreground: "red",
+            },
       },
       // colors: {
       //   border: "hsl(var(--border))",
