@@ -11,8 +11,9 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* logo */}
         <Link href="/">
-          <h1 className="text-3xl font-semibold text-white flex items-center gap-3">
+          <h1 className="text-lg md:text-3xl font-semibold text-white flex items-center gap-3">
           <Image
+            className="w-[30px] h-[30px] md:w-[40px] md:h-[40px]"
             src="/IH-fav.png"
             width={40}
             height={40}
