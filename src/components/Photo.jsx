@@ -42,7 +42,7 @@ const Photo = () => {
                             strokeLinecap="round"
                             strokeLinejoin="round"
                             initial={{ strokeDasharray: "0 1570" }}
-                            animate={{ strokeDasharray: ["0 1570", "1570 0"] }}
+                            animate={{ strokeDasharray: ["15 120 25 25", "16 25 92 72", "4 250 22 22"] }}
                             transition={{
                                 duration: 5,
                                 repeat: Infinity,

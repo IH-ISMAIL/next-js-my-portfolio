@@ -4,6 +4,7 @@ import { AnimatePresence, easeInOut, motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import Stairs from './Stairs';
 
+
 const PageTransition = ({ children }) => {
     const pathname = usePathname()
     return (
