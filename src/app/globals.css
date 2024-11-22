@@ -92,6 +92,14 @@
     @apply py-[40px] md:py-[50px] xl:py-[60px]
   }
 
+  .text-stock-outline {
+    -webkit-text-stroke: 1px #ffffff;
+  }
+  
+  .text-stock-outline-hover {
+    -webkit-text-stroke: 1px #00ff99;
+  }
+
 }
 
 

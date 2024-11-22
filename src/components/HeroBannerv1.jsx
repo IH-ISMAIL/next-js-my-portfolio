@@ -6,7 +6,7 @@ import Photo from './Photo';
 
 const HeroBannerVone = () => {
     return (
-        <section id="hero-section-wrapper" className="section-padding overflow-hidden">
+        <section id="hero-section-wrapper" className="pb-[60px] overflow-hidden">
             <div className="hero-section-container container">
                 <div className="hero-section-body-wrapper flex flex-col-reverse xl:flex-row items-center justify-between gap-8 xl:gap-4">
                     {/* Hero Text */}

@@ -29,7 +29,6 @@ const Header = () => {
         <div className="hidden xl:flex justify-between items-center">
           <Nav />
           <Button color="gray" variant="bg-primary">
-            
              <Link  href='/'>Hire me</Link>
           </Button>
         </div>
