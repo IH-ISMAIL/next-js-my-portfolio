@@ -5,12 +5,12 @@ import CountUp from 'react-countup';
 const WorkingProgress = () => {
 
     const stats = [
-        { num: 2, text: "Years Of Experience" },
-        { num: 100, text: "Projects Completed" },
+        { num: 5, text: "Years Of Experience" },
+        { num: 120, text: "Projects Completed" },
         { num: 8, text: "Technologies Masters" },
         { num: 500, text: "Code Commit" },
         { num: 120, text: "Completed" },
-        { num: 50, text: "Get Five Start From Clients" },
+        { num: 105, text: "Get⭐From Clients" },
     ]
 
     return (
