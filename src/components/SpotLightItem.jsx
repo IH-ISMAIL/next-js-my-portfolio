@@ -36,7 +36,7 @@ const SpotLightItem = ({ children }) => {
           />
         )}
       </AnimatePresence>
-      <div className="relative z-10">{children}</div>
+      <div className=" service-content-inner ">{children}</div>
     </div>
   );
 };

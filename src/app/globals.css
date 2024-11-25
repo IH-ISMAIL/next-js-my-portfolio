@@ -1,9 +1,46 @@
 .spotLightCard {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.spotLightCard {
   /* box-shadow: rgba(0, 255, 153, 0.15) 1.95px 1.95px 2.6px; */
   box-shadow: rgba(0, 255, 153, 0.15) 0px 2px 8px 0px;
 
 }
 
+
+.service-hover-full-description {
+  position: absolute;
+  left: 0;
+  bottom: -100%; /* Start completely off-screen at the bottom */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center content if needed */
+  background: transparent; /* Adjust as needed */
+  transform: skew(0deg); /* Initial skew */
+  transition: all 0.6s ease-in-out; /* Smooth transition for all properties */
+  z-index: 1;
+}
+
+.spotLightCard {
+  position: relative; /* Ensure the child element positions relative to this */
+  overflow: hidden; /* Prevent overflow during animation */
+}
+
+.spotLightCard:hover .service-hover-full-description {
+  bottom: 0; /* Move to fully visible */
+  background: #1c1c22; /* Adjust hover background */
+
+  z-index: 999; /* Ensure it appears above other content */
+}
 
 
 

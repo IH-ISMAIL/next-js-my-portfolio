@@ -7,6 +7,7 @@ import SpotLightItem from "@/components/SpotLightItem";
 import { sectionClassName } from "@/lib/utils";
 import { motion } from "framer-motion";
 import SectionTitle from "@/components/SectionTitle";
+import { FaFigma, FaHtml5, FaShopify, FaSquarespace, FaWix, FaWordpress } from "react-icons/fa";
 
 
 const Services = () => {
@@ -15,6 +16,7 @@ const Services = () => {
       {
          num: "01",
          url: "#",
+         logo: <FaShopify className="text-primary font-extrabold text-7xl" />,
          title: "Shopify Design",
          description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.Possimus quibusdam reiciendis reprehenderit"
       },
@@ -22,29 +24,34 @@ const Services = () => {
          num: "03",
          url: "#",
          title: "Wix Design",
+         logo: <FaWix className="text-primary font-extrabold text-7xl" />,
          description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.Possimus quibusdam reiciendis reprehenderit"
       },
       {
          num: "04",
          url: "#",
+         logo: <FaSquarespace className="text-primary font-extrabold text-5xl" />,
          title: "Squarespace",
          description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.Possimus quibusdam reiciendis reprehenderit"
       },
       {
          num: "05",
          url: "#",
+         logo: <FaWordpress className="text-primary font-extrabold text-5xl" />,
          title: "Wordpress",
          description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.Possimus quibusdam reiciendis reprehenderit"
       },
       {
          num: "06",
          url: "#",
+         logo: <FaHtml5 className="text-primary font-extrabold text-5xl" />,
          title: "PSD to HTML",
          description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.Possimus quibusdam reiciendis reprehenderit"
       },
       {
          num: "07",
          url: "#",
+         logo: <FaFigma className="text-primary font-extrabold text-5xl" />,
          title: "Figma to HTML, CSS, JS",
          description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.Possimus quibusdam reiciendis reprehenderit"
       }
@@ -54,7 +61,7 @@ const Services = () => {
       <section className={sectionClassName(usePathname)}>
          <div className="container mx-auto section-padding">
 
-           <SectionTitle title={"Our"} colorText={"Services"} />
+            <SectionTitle title={"Our"} colorText={"Services"} />
 
             <motion.div
                initial={{ opacity: 0 }}
@@ -67,30 +74,35 @@ const Services = () => {
                {servicesContent.map((service, index) => (
                   <motion.div
 
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ type: "spring", stiffness: 150, damping: 20 }}
-                  
+                     whileHover={{ scale: 1.05 }}
+                     whileTap={{ scale: 0.98 }}
+                     transition={{ type: "spring", stiffness: 150, damping: 20 }}
+
                   >
 
                      <SpotLightItem key={index}>
                         <div
                            className="service-item flex flex-col justify-center gap-6 group"
                         >
-                           <div className="w-full flex justify-between items-center">
+                           <div className="w-full flex justify-center items-center">
                               <div className="text-4xl font-extrabold text-stock-outline text-transparent group-hover:text-stock-outline-hover">
-                                
-                              {index > 10 ? "20" : `0${index + 1}`}
+
+                                 {/* {index > 10 ? "20" : `0${index + 1}`} */}
                               </div>
                               <Link
                                  href={service.url}
-                                 className="w-[30px] h-[30px] xl:w-[50px] xl:h-[50px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:rotate-45"
+                                 className="w-[30px] h-[30px] xl:w-[100px] xl:h-[100px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:rotate-45"
                               >
-                                 <BsArrowDownRight className="text-primary font-extrabold text-xl" />
+                                 {/* < FaShopify className="text-primary font-extrabold text-4xl" /> */}
+                                 {service.logo}
                               </Link>
                            </div>
-                           <h3 className="h3 group-hover:text-accent">{service.title}</h3>
-                           <p>{service.description}</p>
+                           <h3 className="text-4xl group-hover:text-accent">{service.title}</h3>
+                           <div className="service-hover-full-description">
+                              <SpotLightItem>
+                              <p>{service.description}</p>
+                              </SpotLightItem>
+                           </div>
                         </div>
                      </SpotLightItem>
 
