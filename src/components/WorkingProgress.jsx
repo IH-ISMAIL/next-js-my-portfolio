@@ -15,12 +15,12 @@ const WorkingProgress = () => {
 
     return (
         <section>
-           <div className='container mx-auto'>
-                <div className='grid grid-cols-2 xl:grid-cols-3 gap-8 justify-items-center items-center max-w-[800vw] xl:max-w-none'>
+           <div className='container mx-auto section-padding'>
+                <div className='grid grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-8 justify-items-center items-center max-w-[800vw] xl:max-w-none'>
                     {
                         stats.map((item, index)=> {
                             return(
-                                <div key={index} className='border-gray-800 rounded-[7px] flex flex-col justify-center xl:flex-row items-center gap-4 h-[200px] bg-gray-800 xl:bg-transparent p-4 xl:h-full text-center'>
+                                <div key={index} className='border-gray-800 rounded-[7px] flex flex-col justify-center xl:flex-row items-center gap-4 h-[200px] bg-gray-800 xl:bg-transparent p-4 xl:h-full text-center w-full'>
                                     <CountUp 
                                       end={item.num}
                                       duration={5}

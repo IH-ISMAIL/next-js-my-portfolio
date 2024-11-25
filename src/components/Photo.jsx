@@ -23,7 +23,7 @@ const Photo = () => {
                         quality={100}
                         fill
                         className="object-contain"
-                        alt="ismail hossain"
+                        alt="ismail hossain IH RAJU"
                     />
 
                     {/* Animated Circles */}

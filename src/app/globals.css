@@ -1,3 +1,63 @@
+.spotLightCard {
+  /* box-shadow: rgba(0, 255, 153, 0.15) 1.95px 1.95px 2.6px; */
+  box-shadow: rgba(0, 255, 153, 0.15) 0px 2px 8px 0px;
+
+}
+
+
+
+
+
+.custom-primary-btn{
+  display: block;
+  padding: 10px 40px;
+  margin: 10px auto;
+  font-weight: 700;
+  border-radius: 4px;
+  outline: none;
+  text-decoration: none;
+  color: #784ba0;
+  background: rgb(255, 255, 255);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+h3.section-title::before {
+  position: absolute;
+  content: "";
+  width: 15%;
+  height: 6px;
+  background: #00ff99;
+  bottom: -17px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 50px;
+}
+
+.custom-primary-btn:hover {
+  animation: gelatine 0.5s 1;
+}
+
+
+
+@keyframes gelatine {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}
+
+
 /* @layer base {
   :root {
     --background: 0 0% 100%;
@@ -89,7 +149,7 @@
   }
 
   .section-padding{
-    @apply py-[40px] md:py-[50px] xl:py-[60px]
+    @apply py-[40px] md:py-[50px] xl:py-[70px]
   }
 
   .text-stock-outline {
