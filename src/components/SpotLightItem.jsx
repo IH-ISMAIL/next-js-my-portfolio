@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useState, useEffect, useRef } from "react";
 
-const SpotLightItem = ({ children }) => {
+const SpotLightItem = ({ children,  spotLightCard}) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   const itemRef = useRef(null);
@@ -21,7 +21,7 @@ const SpotLightItem = ({ children }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onMouseMove={handleMouseMove}
-      className="relative overflow-hidden bg-primary w-full p-4 rounded-[15px] spotLightCard"
+      className={`relative overflow-hidden bg-primary w-full p-4 rounded-[15px] ${spotLightCard}`}
     >
       <AnimatePresence>
         {isHovered && (

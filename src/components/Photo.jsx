@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import ismail from "../assets/ismail/Raju ismail hossain Ih Raju.png"
+import ismail from "../assets/ismail/ismail hossain.png"
 import { motion } from "framer-motion";
 
 const Photo = () => {

@@ -73,14 +73,14 @@ const Services = () => {
             >
                {servicesContent.map((service, index) => (
                   <motion.div
-
+                  key={index}
                      whileHover={{ scale: 1.05 }}
                      whileTap={{ scale: 0.98 }}
                      transition={{ type: "spring", stiffness: 150, damping: 20 }}
 
                   >
 
-                     <SpotLightItem key={index}>
+                     <SpotLightItem  spotLightCard="spotLightCard">
                         <div
                            className="service-item flex flex-col justify-center gap-6 group"
                         >
@@ -99,7 +99,7 @@ const Services = () => {
                            </div>
                            <h3 className="text-4xl group-hover:text-accent">{service.title}</h3>
                            <div className="service-hover-full-description">
-                              <SpotLightItem>
+                              <SpotLightItem spotLightCard="spotLightCard">
                               <p>{service.description}</p>
                               </SpotLightItem>
                            </div>
