@@ -200,3 +200,22 @@ h3.section-title::before {
 }
 
 
+.window {
+  width: 550px;
+  margin: auto;
+  border-radius: 15px;
+  cursor: n-resize;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    height: 550px;
+    transition: 8s all ease;
+
+    &:hover {
+      object-position: bottom;
+    }
+  }
+}

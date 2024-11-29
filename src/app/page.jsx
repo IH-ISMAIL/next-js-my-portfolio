@@ -14,11 +14,11 @@ export default function Home() {
 
   return (
     <main>
-     <SetionTranstios> <HeroBannerVone /></SetionTranstios>
-     <SetionTranstios>  <WorkingProgress /> </SetionTranstios>
-     <SetionTranstios>   <Services /> </SetionTranstios>
-     <SetionTranstios>   <Resume /> </SetionTranstios>
-     <SetionTranstios>   <Work /> </SetionTranstios>
+    <HeroBannerVone />
+     <WorkingProgress />
+      <Services />
+      <Resume />
+      <Work />
     </main>
   );
 }

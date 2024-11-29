@@ -58,7 +58,7 @@ const Services = () => {
    ]
 
    return (
-      <section className={sectionClassName(usePathname)}>
+      <section id={sectionClassName(usePathname)} >
          <div className="container mx-auto section-padding">
 
             <SectionTitle title={"Our"} colorText={"Services"} />
