@@ -174,19 +174,19 @@ h3.section-title::before {
   }
 
   .h1{
-    @apply text-[42px] xl:text-[80px] leading-[1.1] font-semibold;
+    @apply text-[42px] xl:text-[80px] leading-[1.1] font-bold uppercase;
   }
 
   .h2{
-    @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold;
+    @apply text-[36px] xl:text-[48px] leading-[1.1] font-bold uppercase;
   }
 
   .h3{
-    @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold;
+    @apply text-[20px] xl:text-[24px] leading-[1.1] font-bold uppercase;
   }
 
   .section-padding{
-    @apply py-[40px] md:py-[50px] xl:py-[70px]
+    @apply mb-[40px] md:mb-[50px] xl:mb-[100px]
   }
 
   .text-stock-outline {

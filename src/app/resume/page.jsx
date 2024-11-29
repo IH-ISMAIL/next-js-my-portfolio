@@ -8,13 +8,21 @@ import Image from "next/image";
 import { FaCss3, FaHtml5, FaJs, FaNodeJs, FaReact, FaShopify, FaSquarespace, FaWix } from "react-icons/fa";
 import Education from "../../assets/education-logo.png";
 import Experience from "../../assets/achievement.png";
-import Skill from "../../assets/skills.png"
+import Skill from "../../assets/skills.png";
+import AboutMeLogo from "../../assets/aboutUs.png";
+import AboutMeImg from "../../assets/IH ISMAIL HOSSAIN ABOUT ME IMAGE.png";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@radix-ui/react-tooltip";
+import DotAboutMeLottefle from "@/components/DotAboutMeLottefle";
+
+
+
+
 
 // About data 
 const about = {
     title: 'About Me',
     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.Accusamus quo sed pariatur labore ullam, perspiciatis accusantium quod nam aperiam.Culpa harum porro hic atque placeat optio consequatur excepturi a.Cupiditate expedita facilis commodi facere, possimus quis provident repudiandae iusto velit quas aperiam alias voluptate maiores tenetur non, natus earum incidunt.",
-
+    logo: AboutMeLogo,
     info: [
         {
             fieldName: "Name",
@@ -58,30 +66,20 @@ const experience = {
     icons: Experience,
     items: [
         {
+            company: "Softvence Agency",
+            position: "Web Developer",
+            duration: "1 Years (Present)",
+            logo: "https://i.ibb.co.com/nQt5zBL/download.png"
+        },
+        {
             company: "BdCalling IT Limited",
             position: "Web Developer",
-            duration: "1.7 Years Running",
+            duration: "6 Months",
             logo: "https://bdcalling.com/wp-content/themes/bdcalling/assets/images/Bdcalling%20White%20Logo.png"
-        },
-        {
-            company: "BdCalling IT Limited",
-            position: "Web Developer",
-            duration: "1.7 Years Running",
-            logo: "https://bdcalling.com/wp-content/themes/bdcalling/assets/images/Bdcalling%20White%20Logo.png"
-        },
-        {
-            company: "BdCalling IT Limited",
-            position: "Web Developer",
-            duration: "1.7 Years Running"
-        },
-        {
-            company: "BdCalling IT Limited",
-            position: "Web Developer",
-            duration: "1.7 Years Running"
         }
     ]
 }
-// Education Data 
+// Education/Courses Data 
 const education = {
     icon: '/assets/resume/cap.svg',
     title: "My Educatoin",
@@ -104,11 +102,17 @@ const education = {
             institution: "Programming Hero Institution",
             degree: "Next Level Web Development",
             duration: "6 Month",
-            logo: "https://scontent.fdac19-1.fna.fbcdn.net/v/t39.30808-6/456335437_122104388492477182_5480421418016704816_n.jpg"
+            logo: "https://i.ibb.co.com/kDRKHhh/Next-Lvl.png"
+        },
+        {
+            institution: "Ostad",
+            degree: "Shopify Theme Development",
+            duration: "6 Month",
+            logo: "https://i.ibb.co.com/wWMCM6x/Ostad-Logo.png"
         }
     ]
 }
-// Education Data 
+// Skill Data 
 const skills = {
     icon: '/assets/resume/cap.svg',
     title: "My Skills",
@@ -116,35 +120,35 @@ const skills = {
     icons: Skill,
     items: [
         {
-            icon: <FaHtml5 />,
+            icon: <FaHtml5 className="w-[40px] h-[30px] xl:w-[60px] xl:h-[60px] text-accent" />,
             name: "HTML 5"
         },
         {
-            icon: <FaCss3 />,
+            icon: <FaCss3 className="w-[40px] h-[30px] xl:w-[60px] xl:h-[60px] text-accent" />,
             name: "CSS 3"
         },
         {
-            icon: <FaJs />,
+            icon: <FaJs className="w-[40px] h-[30px] xl:w-[60px] xl:h-[60px] text-accent" />,
             name: "Javascript"
         },
         {
-            icon: <FaShopify />,
+            icon: <FaShopify className="w-[40px] h-[30px] xl:w-[60px] xl:h-[60px] text-accent" />,
             name: "Shopify"
         },
         {
-            icon: <FaSquarespace />,
+            icon: <FaSquarespace className="w-[40px] h-[30px] xl:w-[60px] xl:h-[60px] text-accent" />,
             name: "Squarespace"
         },
         {
-            icon: <FaWix />,
+            icon: <FaWix className="w-[40px] h-[30px] xl:w-[60px] xl:h-[60px] text-accent" />,
             name: "Wix"
         },
         {
-            icon: <FaReact />,
+            icon: <FaReact className="w-[40px] h-[30px] xl:w-[60px] xl:h-[60px] text-accent" />,
             name: "React"
         },
         {
-            icon: <FaNodeJs />,
+            icon: <FaNodeJs className="w-[40px] h-[30px] xl:w-[60px] xl:h-[60px] text-accent" />,
             name: "Node Js"
         },
     ]
@@ -158,13 +162,13 @@ const Resume = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 0.3, ease: "easeIn" }}
-                className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
+                className=" flex items-center justify-center py-12 xl:py-0"
             >
 
 
                 <div className="container mx-auto">
                     <SectionTitle title="My" colorText="Resume" />
-                    <Tabs defaultValue="experience" className="flex flex-col gap-[60px]">
+                    <Tabs defaultValue="experience" className="flex flex-col gap-[30px]">
                         <TabsList className="flex flex-col xl:flex-row w-full mx-w-[250px] mx-auto xl:mx-0 ">
                             <TabsTrigger className="rounded-[15px]" value="experience">Expreience</TabsTrigger>
                             <TabsTrigger className="rounded-[15px]" value="Education">Education</TabsTrigger>
@@ -174,7 +178,7 @@ const Resume = () => {
 
 
 
-                        <div className="min-h-[70vh] w-full overflow-hidden  overflow-y-scroll xl:overflow-visible">
+                        <div >
 
                             {/* Experience */}
                             <TabsContent value="experience" className="w-full flex flex-col gap-4">
@@ -187,7 +191,8 @@ const Resume = () => {
                                     <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{experience.description}</p>
                                 </div>
 
-                                <ScrollArea className="h-[400px]">
+
+                                <ScrollArea>
 
                                     <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                                         {experience.items.map((item, index) => {
@@ -206,8 +211,8 @@ const Resume = () => {
 
                                                         >
                                                             <div>
-                                                                <span>{item.duration}</span>
-                                                                <h3 >{item.position}</h3>
+                                                                <span className="text-accent">{item.duration}</span>
+                                                                <h3 className="font-bold h4">{item.position}</h3>
                                                                 <div className="flex items-center gap-3">
                                                                     {/* dot */}
                                                                     <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
@@ -217,12 +222,15 @@ const Resume = () => {
                                                             {/* company logo */}
                                                             <div>
                                                                 <img
-                                                                    width={"140px"}
-                                                                    height={100}
-                                                                    src={!item.logo ? "https://www.svgrepo.com/show/508699/landscape-placeholder.svg" : item.logo}
+                                                                    width={200}
+                                                                    height={200}
+                                                                    src={item.logo}
                                                                     alt="logo"
 
                                                                 />
+
+
+                                                                {/* <Image src={item.logo && item.logo} width={70} height={70} alt="Education" /> */}
                                                             </div>
                                                         </li>
                                                     </SpotLightItem>
@@ -236,18 +244,17 @@ const Resume = () => {
                             </TabsContent>
 
                             {/* Education */}
-
                             <TabsContent value="Education" className="w-full flex flex-col gap-4">
 
                                 <div className="flex flex-col gap-[30px] text-center xl:text-left ">
                                     <div className="flex items-center gap-4">
                                         <Image src={education.icons} width={70} height={70} alt="Education" />
-                                        <h3 className="text-4xl font-bold">{experience.title}</h3>
+                                        <h3 className="text-4xl font-bold">{education.title}</h3>
                                     </div>
                                     <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{education.description}</p>
                                 </div>
 
-                                <ScrollArea className="h-[400px]">
+                                <ScrollArea >
 
                                     <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                                         {education.items.map((item, index) => {
@@ -279,7 +286,7 @@ const Resume = () => {
                                                                 <img
                                                                     width={"140px"}
                                                                     height={100}
-                                                                    src={!item.logo ? "https://www.svgrepo.com/show/508699/landscape-placeholder.svg" : item.logo}
+                                                                    src={item.logo}
                                                                     alt="logo"
 
                                                                 />
@@ -295,8 +302,10 @@ const Resume = () => {
 
                             </TabsContent>
 
-                            {/* Skill */}
+
+                            {/* skill */}
                             <TabsContent value="Skills" className="w-full flex flex-col gap-4">
+
                                 <div className="flex flex-col gap-[30px] text-center xl:text-left ">
                                     <div className="flex items-center gap-4">
                                         <Image src={skills.icons} width={70} height={70} alt="Education" />
@@ -305,9 +314,9 @@ const Resume = () => {
                                     <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{skills.description}</p>
                                 </div>
 
-                                <ScrollArea className="h-[400px]">
+                                <ScrollArea>
 
-                                    <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                                    <ul className="grid grid-cols-1 lg:grid-cols-4 gap-[30px]">
                                         {skills.items.map((item, index) => {
                                             return (
                                                 <motion.div
@@ -317,33 +326,22 @@ const Resume = () => {
                                                     transition={{ type: "spring", stiffness: 150, damping: 20 }}
 
                                                 >
-                                                    <SpotLightItem>
-                                                        <li
 
-                                                            className="bg-primary h-[184px] py-6 px-10 rounded-xl flex items-center justify-between gap-1"
+                                                    <li key={index}>
+                                                        <TooltipProvider delayDuration={100}>
+                                                            <Tooltip>
+                                                                <TooltipTrigger className="w-full h-[120px] bg-[#232329] rounded-xl flex justify-center items-center group">
+                                                                    <div>
+                                                                        {item.icon}
+                                                                    </div>
+                                                                </TooltipTrigger>
+                                                                <TooltipContent className="bg-white text-primary text-xl font-bold p-3 border rounded-[7px]">
+                                                                    {item.name}
+                                                                </TooltipContent>
+                                                            </Tooltip>
+                                                        </TooltipProvider>
+                                                    </li>
 
-                                                        >
-                                                            <div>
-                                                                <span>{item.name}</span>
-                                                                <h3 >{item.degree}</h3>
-                                                                <div className="flex items-center gap-3">
-                                                                    {/* dot */}
-                                                                    <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                                                                    <p>{item.institution}</p>
-                                                                </div>
-                                                            </div>
-                                                            {/* company logo */}
-                                                            <div>
-                                                                <img
-                                                                    width={"140px"}
-                                                                    height={100}
-                                                                    src={!item.logo ? "https://www.svgrepo.com/show/508699/landscape-placeholder.svg" : item.logo}
-                                                                    alt="logo"
-
-                                                                />
-                                                            </div>
-                                                        </li>
-                                                    </SpotLightItem>
                                                 </motion.div>
                                             )
                                         })}
@@ -353,11 +351,30 @@ const Resume = () => {
 
                             </TabsContent>
 
-                            <TabsContent value="About Me" className="w-full">
-                                About Me
+                            {/* Abour Me */}
+                            <TabsContent value="About Me" className="w-full flex flex-col gap-4">
+
+
+
+                                <div className="ismail-about-me-wrapper flex gap-6 items-center">
+                                    <div className="flex flex-col gap-[10px] text-center xl:text-left  basis-[55%]">
+                                        <div className="flex items-center gap-4">
+                                            <Image src={about.logo} width={70} height={70} alt="Education" />
+                                            <h3 className="text-4xl font-bold">{about.title}</h3>
+                                        </div>
+                                        <p className="max-w-[700px] text-white/60 mx-auto xl:mx-0">{about.description}</p>
+                                    </div>
+                                    <div>
+                                       <DotAboutMeLottefle/>
+                                    </div>
+                                </div>
+
+
                             </TabsContent>
 
                         </div>
+
+
 
 
 

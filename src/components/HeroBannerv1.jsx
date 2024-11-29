@@ -11,7 +11,7 @@ const HeroBannerVone = () => {
 
 
   return (
-    <section id="hero-section-wrapper" className="pb-[60px] overflow-hidden relative">
+    <section id="hero-section-wrapper" className="py-[40px] overflow-hidden relative">
      
 
       <div className="hero-section-container container">

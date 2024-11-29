@@ -2,7 +2,7 @@
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"],
+  darkMode: ["light, dark"],
   content: [
     './pages/**/*.{js,jsx}',
     './components/**/*.{js,jsx}',
@@ -19,7 +19,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      primary: "var(--font-JetBrainsMono)"
+      primary: "var(--font-Rajdhani)"
     },
     extend: {
       colors: {
