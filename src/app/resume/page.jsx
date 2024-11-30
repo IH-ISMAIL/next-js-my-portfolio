@@ -21,7 +21,7 @@ import DotAboutMeLottefle from "@/components/DotAboutMeLottefle";
 // About data 
 const about = {
     title: 'About Me',
-    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.Accusamus quo sed pariatur labore ullam, perspiciatis accusantium quod nam aperiam.Culpa harum porro hic atque placeat optio consequatur excepturi a.Cupiditate expedita facilis commodi facere, possimus quis provident repudiandae iusto velit quas aperiam alias voluptate maiores tenetur non, natus earum incidunt.",
+    description: "I am strategic and goal-oriented, and I always work with an end goal in mind. I like to take challenges in everything. I believe I am a good candidate for this position.",
     logo: AboutMeLogo,
     info: [
         {
@@ -175,9 +175,6 @@ const Resume = () => {
                             <TabsTrigger className="rounded-[15px]" value="Skills"> Skills</TabsTrigger>
                             <TabsTrigger className="rounded-[15px]" value="About Me">About Me</TabsTrigger>
                         </TabsList>
-
-
-
                         <div >
 
                             {/* Experience */}
@@ -360,7 +357,7 @@ const Resume = () => {
                                     <div className="flex flex-col gap-[10px] text-center xl:text-left  basis-[55%]">
                                         <div className="flex items-center gap-4">
                                             <Image src={about.logo} width={70} height={70} alt="Education" />
-                                            <h3 className="text-4xl font-bold">{about.title}</h3>
+                                            <h3 className="h2 font-bold">{about.title}</h3>
                                         </div>
                                         <p className="max-w-[700px] text-white/60 mx-auto xl:mx-0">{about.description}</p>
                                     </div>
@@ -373,11 +370,6 @@ const Resume = () => {
                             </TabsContent>
 
                         </div>
-
-
-
-
-
                     </Tabs>
                 </div>
 

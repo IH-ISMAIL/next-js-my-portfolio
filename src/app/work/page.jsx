@@ -1,27 +1,13 @@
-'use client';
+"use client"
 
-import SectionTitle from "@/components/SectionTitle";
-import { sectionClassName } from "@/lib/utils";
-import { usePathname } from 'next/navigation';
-
-import { motion } from "framer-motion";
-import React, { useState } from "react";
-
-// Swiper
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-
-import { BsArrowUpRight, BsGithub } from "react-icons/bs";
-
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-
-import Link from "next/link";
 import Image from "next/image";
+import WorkSliderBtn from "@/components/WorkSliderBtn";
+import thumbilImage1 from '/images/thumbill-1.png'
+import SectionTitle from "@/components/SectionTitle";
 
-import { BsX } from "react-icons/bs";
-
-import imageONe from '/images/thumbill-1.png';
-import imageTwo from '/images/thumbill-2.png';
 
 
 const AboutProjects = [
@@ -31,9 +17,9 @@ const AboutProjects = [
         title: "Project 1",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         stack: ["HTML", "CSS 3", "JavaScript", "React JS"],
-        images: imageONe,
-        liveURL: "https://example.com/project1", // Replace with your live project URL
-        githubURL: "https://github.com/username/project1", // Replace with your GitHub repo URL
+        images: thumbilImage1,
+        liveURL: "https://example.com/project1",
+        githubURL: "https://github.com/username/project1",
     },
     {
         num: "02",
@@ -41,18 +27,18 @@ const AboutProjects = [
         title: "Project 2",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         stack: ["Node.js", "Express.js", "MongoDB"],
-        images: imageTwo,
-        liveURL: "https://example.com/project2", // Replace with your live project URL
-        githubURL: "https://github.com/username/project2", // Replace with your GitHub repo URL
+        images: thumbilImage1,
+        liveURL: "https://example.com/project2",
+        githubURL: "https://github.com/username/project2",
     },
 ];
 
 const Work = () => {
+    const [swiperInstance, setSwiperInstance] = useState(null); // Store Swiper instance
     const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalImage, setModalImage] = useState("");
 
-    const currentProject = AboutProjects[currentProjectIndex];
 
     const handleImageClick = (image) => {
         setModalImage(image);
@@ -60,23 +46,20 @@ const Work = () => {
     };
 
     return (
-        <motion.section
-            initial={{ opacity: 0 }}
-            animate={{
-                opacity: 1,
-                transition: { delay: 0.2, duration: 0.5, ease: "easeInOut" },
-            }}
-            id={sectionClassName(usePathname)}
-            className="section-padding"
-        >
+        <section className="section-padding">
             <div className="ih-ismail-hossain-wrapper container mx-auto">
+
+
                 <SectionTitle title="My" colorText="Work" />
+
+                
                 <div className="ih-work-project-wrapper flex flex-col xl:flex-row xl:gap-7">
                     {/* Slider Section */}
-                    <div className="w-full xl:w-[48%] xl:h-[480px] flex flex-col xl:justify-between   overflow-hidden rounded-xl">
+                    <div className="w-full xl:w-[48%] xl:h-[480px] flex flex-col xl:justify-between   rounded-xl">
                         <Swiper
                             spaceBetween={30}
                             slidesPerView={1}
+                            onSwiper={setSwiperInstance} // Capture Swiper instance
                             onSlideChange={(swiper) => setCurrentProjectIndex(swiper.activeIndex)}
                             className="w-full h-[520px]"
                         >
@@ -97,68 +80,35 @@ const Work = () => {
                                 </SwiperSlide>
                             ))}
                         </Swiper>
+                        {/* Slider Button */}
+                        {swiperInstance && (
+                            <WorkSliderBtn
+                                swiper={swiperInstance} // Pass Swiper instance
+                                containerStyle="flex gap-4 w-full items-center justify-end  text-right mt-3"
+                                btnStyle="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all duration-5 border-accent rounded-[7px]"
+                                iconsSTyles="icon-style-class"
+                            />
+                        )}
                     </div>
 
                     {/* Text Section */}
                     <div className="w-full xl:w-[48%] xl:h-[480px] flex flex-col xl:justify-center">
                         <div>
                             <div className="text-8xl font-extrabold text-transparent text-stock-outline duration-500">
-                                {currentProject.num}
+                                {AboutProjects[currentProjectIndex].num}
                             </div>
                             <div className="h2 font-extrabold text-outline text-white">
-                                {currentProject.name}
+                                {AboutProjects[currentProjectIndex].name}
                             </div>
-                            <p>{currentProject.description}</p>
+                            <p>{AboutProjects[currentProjectIndex].description}</p>
                             <ul className="flex gap-4">
-                                {currentProject.stack.map((item, index) => (
+                                {AboutProjects[currentProjectIndex].stack.map((item, index) => (
                                     <li key={index} className="text-xl font-bold text-accent">
                                         {item}
-                                        {index !== currentProject.stack.length - 1 && ","}
+                                        {index !== AboutProjects[currentProjectIndex].stack.length - 1 && ","}
                                     </li>
                                 ))}
                             </ul>
-
-                            {/* Buttons */}
-                            <div className="flex gap-4 items-center">
-                                {/* Live Project Link */}
-                                {currentProject.liveURL && (
-                                    <Link
-                                        href={currentProject.liveURL}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <TooltipProvider delayDuration={100}>
-                                            <Tooltip>
-                                                <TooltipTrigger className="bg-primary text-white group-[hover]:text-accent w-16 h-16 text-xl rounded-full flex items-center justify-center">
-                                                    <BsArrowUpRight />
-                                                </TooltipTrigger>
-                                                <TooltipContent className="bg-white text-black">
-                                                    <p>Live Project</p>
-                                                </TooltipContent>
-                                            </Tooltip>
-                                        </TooltipProvider>
-                                    </Link>
-                                )}
-                                {/* GitHub Link */}
-                                {currentProject.githubURL && (
-                                    <Link
-                                        href={currentProject.githubURL}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <TooltipProvider delayDuration={100}>
-                                            <Tooltip>
-                                                <TooltipTrigger className="bg-primary text-white group-[hover]:text-accent w-16 h-16 text-xl rounded-full flex items-center justify-center">
-                                                    <BsGithub />
-                                                </TooltipTrigger>
-                                                <TooltipContent className="bg-white text-black">
-                                                    <p>Source Code</p>
-                                                </TooltipContent>
-                                            </Tooltip>
-                                        </TooltipProvider>
-                                    </Link>
-                                )}
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -166,13 +116,13 @@ const Work = () => {
 
             {/* Modal */}
             {isModalOpen && (
-                <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
+                <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-[999]">
                     <div className="relative max-w-3xl w-full">
                         <button
                             className="absolute top-2 right-2 text-white text-3xl"
                             onClick={() => setIsModalOpen(false)}
                         >
-                            <BsX />
+                            Close
                         </button>
                         <Image
                             src={modalImage}
@@ -184,7 +134,7 @@ const Work = () => {
                     </div>
                 </div>
             )}
-        </motion.section>
+        </section>
     );
 };
 

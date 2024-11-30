@@ -6,6 +6,7 @@ import Services from "./service/page";
 import Resume from "./resume/page";
 import SetionTranstios from "@/components/SetionTranstion";
 import Work from "./work/page";
+import Contact from "./contact/page";
 
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <Services />
       <Resume />
       <Work />
+      <Contact/>
     </main>
   );
 }
