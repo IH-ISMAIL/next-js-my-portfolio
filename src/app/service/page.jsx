@@ -1,16 +1,21 @@
 "use client";
 
-import { BsArrowDownRight } from "react-icons/bs";
 import Link from "next/link";
 import { usePathname } from 'next/navigation'
 import SpotLightItem from "@/components/SpotLightItem";
 import { sectionClassName } from "@/lib/utils";
 import { motion } from "framer-motion";
 import SectionTitle from "@/components/SectionTitle";
-import { FaFigma, FaHtml5, FaShopify, FaSquarespace, FaWix, FaWordpress } from "react-icons/fa";
+import { FaFigma, FaReact, FaShopify, FaSquarespace, FaWix, FaWordpress } from "react-icons/fa";
+
+
+
 
 
 const Services = () => {
+
+
+  
 
    const servicesContent = [
       {
@@ -44,14 +49,14 @@ const Services = () => {
       {
          num: "06",
          url: "#",
-         logo: <FaHtml5 className="text-primary font-extrabold text-5xl" />,
-         title: "PSD to HTML",
+         logo: <FaReact className="text-primary font-extrabold text-5xl" />,
+         title: "Web Development",
          description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.Possimus quibusdam reiciendis reprehenderit"
       },
       {
          num: "07",
          url: "#",
-         logo: <FaFigma className="text-primary font-extrabold text-5xl" />,
+         logo: <FaFigma  className="text-primary font-extrabold text-5xl" /> ,
          title: "Figma to HTML, CSS, JS",
          description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.Possimus quibusdam reiciendis reprehenderit"
       }
@@ -59,7 +64,11 @@ const Services = () => {
 
    return (
       <section id={sectionClassName(usePathname)} >
-         <div className="container mx-auto section-padding">
+         <div className="container mx-auto section-padding"  
+data-aos="fade-up"
+    data-aos-duration="1500"
+                    
+                    >
 
             <SectionTitle title={"Our"} colorText={"Services"} />
 
@@ -77,12 +86,14 @@ const Services = () => {
                      whileHover={{ scale: 1.05 }}
                      whileTap={{ scale: 0.98 }}
                      transition={{ type: "spring", stiffness: 150, damping: 20 }}
+                   data-aos="fade-left"
+                   data-aos-duration="1000"
 
                   >
 
-                     <SpotLightItem  spotLightCard="spotLightCard">
+                     <SpotLightItem   spotLightCard="spotLightCard">
                         <div
-                           className="service-item flex flex-col justify-center gap-6 group"
+                           className="service-item flex flex-col justify-center gap-6 group" 
                         >
                            <div className="w-full flex justify-center items-center">
                               <div className="text-4xl font-extrabold text-stock-outline text-transparent group-hover:text-stock-outline-hover">

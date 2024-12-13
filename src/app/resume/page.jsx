@@ -87,12 +87,6 @@ const education = {
     icons: Education,
     items: [
         {
-            institution: "Feni Computer Institution",
-            degree: "Web Design",
-            duration: "6 Month",
-            logo: "https://seip-fd.gov.bd/wp-content/uploads/2019/01/logo1.png"
-        },
-        {
             institution: "Programming Hero Institution",
             degree: "Web Development",
             duration: "1 Years",
@@ -109,6 +103,12 @@ const education = {
             degree: "Shopify Theme Development",
             duration: "6 Month",
             logo: "https://i.ibb.co.com/wWMCM6x/Ostad-Logo.png"
+        },
+        {
+            institution: "Feni Computer Institution",
+            degree: "Web Design",
+            duration: "6 Month",
+            logo: "https://seip-fd.gov.bd/wp-content/uploads/2019/01/logo1.png"
         }
     ]
 }
@@ -156,26 +156,29 @@ const skills = {
 
 const Resume = () => {
     return (
-        <section className="section-padding">
+        <section className="section-padding" 
+        data-aos="fade-up"
+    data-aos-duration="1500"
+        >
             <motion.div
 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 0.3, ease: "easeIn" }}
-                className=" flex items-center justify-center py-12 xl:py-0"
+                className=" flex items-center justify-center"
             >
 
 
                 <div className="container mx-auto">
                     <SectionTitle title="My" colorText="Resume" />
-                    <Tabs defaultValue="experience" className="flex flex-col gap-[30px]">
-                        <TabsList className="flex flex-col xl:flex-row w-full mx-w-[250px] mx-auto xl:mx-0 ">
-                            <TabsTrigger className="rounded-[15px]" value="experience">Expreience</TabsTrigger>
-                            <TabsTrigger className="rounded-[15px]" value="Education">Education</TabsTrigger>
-                            <TabsTrigger className="rounded-[15px]" value="Skills"> Skills</TabsTrigger>
-                            <TabsTrigger className="rounded-[15px]" value="About Me">About Me</TabsTrigger>
+                    <Tabs defaultValue="experience" className="flex flex-col lg:flex-row gap-[30px]">
+                        <TabsList className="grid grid-cols-2 lg:flex lg:flex-col max-w-[350px] ">
+                            <TabsTrigger className="rounded-[15px] h-[30px] lg:h-[60px]" value="Education">Education</TabsTrigger>
+                            <TabsTrigger className="rounded-[15px] h-[30px] lg:h-[60px]" value="experience">Expreience</TabsTrigger>
+                            <TabsTrigger className="rounded-[15px] h-[30px] lg:h-[60px]" value="Skills"> Skills</TabsTrigger>
+                            <TabsTrigger className="rounded-[15px] h-[30px] lg:h-[60px]" value="About Me">About Me</TabsTrigger>
                         </TabsList>
-                        <div >
+                        <div className="flex-1 w-full" >
 
                             {/* Experience */}
                             <TabsContent value="experience" className="w-full flex flex-col gap-4">
@@ -271,7 +274,7 @@ const Resume = () => {
                                                         >
                                                             <div>
                                                                 <span>{item.duration}</span>
-                                                                <h3 >{item.degree}</h3>
+                                                                <h3 className="text-lg font-bold uppercase" >{item.degree}</h3>
                                                                 <div className="flex items-center gap-3">
                                                                     {/* dot */}
                                                                     <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
@@ -313,7 +316,7 @@ const Resume = () => {
 
                                 <ScrollArea>
 
-                                    <ul className="grid grid-cols-1 lg:grid-cols-4 gap-[30px]">
+                                    <ul className="grid grid-cols-4 lg:grid-cols-4 gap-4 lg:gap-[30px]">
                                         {skills.items.map((item, index) => {
                                             return (
                                                 <motion.div
@@ -327,7 +330,7 @@ const Resume = () => {
                                                     <li key={index}>
                                                         <TooltipProvider delayDuration={100}>
                                                             <Tooltip>
-                                                                <TooltipTrigger className="w-full h-[120px] bg-[#232329] rounded-xl flex justify-center items-center group">
+                                                                <TooltipTrigger className="w-full h-[70px] lg:h-[120px] bg-[#232329] rounded-xl flex justify-center items-center group">
                                                                     <div>
                                                                         {item.icon}
                                                                     </div>
@@ -353,7 +356,7 @@ const Resume = () => {
 
 
 
-                                <div className="ismail-about-me-wrapper flex gap-6 items-center">
+                                <div className="ismail-about-me-wrapper flex flex-col lg:flex-row gap-6 items-center">
                                     <div className="flex flex-col gap-[10px] text-center xl:text-left  basis-[55%]">
                                         <div className="flex items-center gap-4">
                                             <Image src={about.logo} width={70} height={70} alt="Education" />

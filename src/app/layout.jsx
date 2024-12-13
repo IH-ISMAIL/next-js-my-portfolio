@@ -3,6 +3,13 @@ import "./globals.css";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTransiton from "@/components/StairTransiton";
+import Footer from "@/components/Footer";
+
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 
 const rajdhani = RajdhaniFont({
@@ -16,15 +23,22 @@ export const metadata = {
   description: "I am strategic and goal-oriented, and I always work with an end goal in mind. I like to take challenges in everything. I believe I am a good candidate for this position.",
 };
 
+
+
+
 export default function RootLayout({ children }) {
+
+
   return (
     <html lang="en">
       <body className={rajdhani.variable}>
+        <ToastContainer />
         <Header />
         <StairTransiton/>
         <PageTransition>
           {children}
         </PageTransition>
+        <Footer/>
       </body>
     </html>
   );

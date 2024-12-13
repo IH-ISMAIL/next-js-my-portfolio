@@ -46,7 +46,8 @@ const Work = () => {
     };
 
     return (
-        <section className="section-padding">
+        <section className="section-padding" data-aos="fade-up"
+        data-aos-duration="1500">
             <div className="ih-ismail-hossain-wrapper container mx-auto">
 
 

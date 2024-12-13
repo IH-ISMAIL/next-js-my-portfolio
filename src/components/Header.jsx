@@ -1,13 +1,15 @@
 "use client"
 
 import Link from "next/link";
-import { Button } from "./ui/button";
 import Nav from "./Nav";
 import Image from 'next/image'
 import MobileNav from "./MobileNav";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { useCallback } from "react";
+import PrimaryButton from "./Primary-btn";
+
+
 
 
 const Header = () => {
@@ -53,7 +55,7 @@ const Header = () => {
           type: "circle",
         },
         size: {
-          value: { min: 0.3, max: 1 }, // Particle size
+          value: { min: 0.3, max: 2 }, // Particle size
         },
       },
       interactivity: {
@@ -111,9 +113,7 @@ const Header = () => {
         {/* desktop nav */}
         <div className="hidden xl:flex justify-between items-center">
           <Nav />
-          <Button color="gray" variant="bg-primary">
-             <Link  href='/'>Hire me</Link>
-          </Button>
+          <PrimaryButton bgColor="#00ff99" title="Hire Me" />
         </div>
 
         {/* mobile menu */}

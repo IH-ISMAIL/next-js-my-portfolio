@@ -1,5 +1,6 @@
+"use client"
+
 import Link from 'next/link';
-import React from 'react';
 import { FaGithub, FaFacebook, FaYoutube, FaLinkedin } from "react-icons/fa";
 
 
@@ -8,14 +9,14 @@ const SocialIcons = ({containerStyle, iconStyle}) => {
 
 
     const socailIcons = [
-        { icons: <FaFacebook/>, path: "/"},
-        { icons: <FaGithub/>, path: "/"},
-        { icons: <FaYoutube/>, path: "/"},
-        { icons: <FaLinkedin/>, path: "/"},
+        { icons: <FaFacebook className='w-[32px] h-[32px]'  />, path: "/"},
+        { icons: <FaGithub className='w-[32px] h-[32px]' />, path: "/"},
+        { icons: <FaYoutube className='w-[32px] h-[32px]' />, path: "/"},
+        { icons: <FaLinkedin className='w-[32px] h-[32px]' />, path: "/"},
     ]
 
     return (
-        <div className={containerStyle}>
+        <div className="flex gap-4  relative">
             {socailIcons.map((icon, index)=> {
                 return(
                     

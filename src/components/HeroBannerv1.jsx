@@ -11,13 +11,16 @@ const HeroBannerVone = () => {
 
 
   return (
-    <section id="hero-section-wrapper" className="py-[40px] overflow-hidden relative">
+    <section id="hero-section-wrapper" className="py-[40px] overflow-hidden relative"          
+    data-aos="fade-up"
+    data-aos-duration="1500"
+    >
      
 
       <div className="hero-section-container container">
         <div className="hero-section-body-wrapper flex flex-col-reverse xl:flex-row items-center justify-between gap-8 xl:gap-4">
           {/* Hero Text */}
-          <div className="hero-section-top basis-[55%]">
+          <div className="hero-section-top basis-[55%]" data-aos="fade-right">
             <div className="hero-section-content flex flex-col gap-4">
               <span className="hero-sub-heading">Front End Developer</span>
               <h1 className="h1">
